@@ -1,0 +1,77 @@
+Algorithm problem3.1.1 {method1 for distinct elements}
+Function Sum (Set1, Set2: array) : integer
+Variables s1, s2, S: integer
+s1 = 0
+s2 = 0
+S = 0
+begin 
+	for i = 0 to Set1 length - 1 
+		if (Set1[i] not in Set2): 
+			s1 = Set1[i] + s1
+		END if
+	END for
+	for j = 0 to Set2 length - 1
+		if (Set2[j] not in Set1):
+			s2 = Set2[j] + s2
+		END if
+	END for
+	S = s1 + s2
+	Sum <= S
+END 
+
+Algorithm problem3.1.2 {method2 for distinct elements}
+Function Sum (Set1, Set2: array) : integer
+Variables s1, s2, S, n, m: integer
+s1 = 0
+s2 = 0
+S = 0
+n = 0
+m = 0
+begin 
+	while (n <= Set1 length - 1) 
+		if (Set1[n] not in Set2)
+			s1 = Set1[n] + s1
+		END if
+		n ++
+	END while
+	while (m <= Set2 length - 1) 
+		if (Set2[m] not in Set1)
+			s2 = Set2[m] + s2
+		END if
+		m ++
+	END while
+	S = s1 + s2 
+	Sum <= S
+END
+
+Algorithm problem3.2.1 {method1 for overlapping elements}
+Function Sum (Set1, Set2: array) : integer
+Variables S: integer
+S = 0
+begin 
+	for i = 0 to Set1 length - 1 
+		if (Set1[i] in Set2): 
+			S = Set1[i]*2 + S
+		END if
+	END for
+	Sum <= S
+END 
+
+Algorithm problem3.2.2 {method2 for overlapping elements}
+Function Sum (Set1, Set2: array) : integer
+Variables s1, s2, S, n, m: integer
+s1 = 0
+s2 = 0
+S = 0
+n = 0
+m = 0
+begin 
+	while (n <= Set1 length - 1) 
+		if (Set1[n] in Set2)
+			S = Set1[n]*2 + S
+		END if
+		n ++
+	END while
+	Sum <= S
+END
+	
